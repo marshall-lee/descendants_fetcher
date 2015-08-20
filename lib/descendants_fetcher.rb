@@ -1,5 +1,3 @@
-require "descendants_fetcher/version"
-
 module DescendantsFetcher
   def descendants
     ObjectSpace.each_object(singleton_class).to_a
