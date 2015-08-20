@@ -4,7 +4,9 @@
 
 This gem provides functionality similar to [descendants_tracker](https://github.com/dkubb/descendants_tracker) but it doesn't store classes in the array. Instead of this it uses `ObjectSpace` approach to *fetch* descendant classes dynamically. It also separates `descendants` and `subclasses`: first is like `ancestors` but in opposite direction (*deep*), second matches strictly by superclass (*children*). See [examples below](#usage).
 
-The main cool **feature** of this project is that unlike with `DescendantsTracker` parent class doesn't store references to descendant class objects when inherited. It means that it can be safely used for dynamically created classes (via `Class.new(...)`).
+The main cool **feature** of this implementation is that unlike with `DescendantsTracker` parent class doesn't store references to descendant class objects when inherited. It means that it can be safely used for dynamically created classes (via `Class.new(...)`).
+
+The main **caveat** of this implementation is that it's obviously slower than `DescendantsTracker`.
 
 ## Installation
 
