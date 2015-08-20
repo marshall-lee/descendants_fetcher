@@ -1,0 +1,31 @@
+language: ruby
+
+sudo: false
+
+env:
+  -
+  - JRUBY_OPTS="-X+O"
+
+rvm:
+  - 1.9
+  - 2.0
+  - 2.1
+  - 2.2
+  - rbx-2
+  - jruby-19mode
+  - jruby-head
+
+matrix:
+  exclude:
+    - rvm: 1.9
+      env: JRUBY_OPTS="-X+O"
+    - rvm: 2.0
+      env: JRUBY_OPTS="-X+O"
+    - rvm: 2.1
+      env: JRUBY_OPTS="-X+O"
+    - rvm: 2.2
+      env: JRUBY_OPTS="-X+O"
+    - rvm: rbx-2
+      env: JRUBY_OPTS="-X+O"
+
+before_install: gem install bundler -v 1.10.6
